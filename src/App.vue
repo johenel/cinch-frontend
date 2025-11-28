@@ -1,13 +1,27 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import {PRODUCT_API} from "@/api/product-api";
+  import {onMounted, ref} from 'vue'
+  import { Product } from "@/interfaces/product-interfaces";
+  import axios from "axios";
+  
+  const products = ref<Product[]>([]);
+
+  const fetchProducts = async () => {
+    const response = await axios.get(PRODUCT_API.list);
+    products.value = response.data
+  }
+
+  onMounted(() => {
+    fetchProducts();
+  })
+</script>
 
 <template>
   <div>
-    <h1 class="text-red-500 mt-2">You did iasdt!</h1>
-    <p>
-      Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-      documentationasd
-    </p>
+    Initial frontend config
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>
