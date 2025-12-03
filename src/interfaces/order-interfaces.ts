@@ -12,3 +12,11 @@ export interface Order {
   note: string,
   orders: OrderItem[]
 }
+
+export interface CreatedOrder {
+  id: number,
+  email: string,
+  address: string,
+  note: string
+}
+
