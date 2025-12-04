@@ -91,9 +91,9 @@
     <div class="min-w-5xl m-auto">
       <!-- Header Section - Contains Cart Icon -->
       <div class="py-3 flex justify-end">
-        <div @click="isCartModalOpen=true" class="rounded border py-1 px-2 border-gray-400 text-sm relative cursor-pointer hover:bg-gray-100">
+        <div id="cartBtn" @click="isCartModalOpen=true" class="rounded border py-1 px-2 border-gray-400 text-sm relative cursor-pointer hover:bg-gray-100">
           <div class="absolute text-[10px] rounded-full top-[-5px] right-[-5px] bg-red-600 px-1 flex justify-center text-center text-white">{{cart.items.length}}</div>
-          <span>Cart</span>
+          <span id="cartBtnLabel">Cart</span>
         </div>
       </div>
       <!-- Search Section -->
@@ -106,7 +106,7 @@
         </div>
       </div>
       <!-- Product List Section -->
-      <div v-if="loadingProducts" class="text-center">Loading products...</div>
+      <div id="loadingProductsLabel" v-if="loadingProducts" class="text-center">Loading products...</div>
       <product-list v-else :products="products"></product-list>
     </div>
     <!-- Cart Modal -->
